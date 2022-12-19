@@ -1,0 +1,437 @@
+// bitmoji code
+var drawFace = function(bitX, bitY, bitH)
+    {
+//face
+noStroke();
+fill(255, 224, 189);
+rect(bitX+(bitH/150*85), bitY+(bitH/150*145), bitH/150*30, bitH/150*20);
+ellipse(bitX+(bitH/150*100), bitY+(bitH/150*100), bitH/150*83, bitH/150*100);
+fill(110, 169, 240); 
+arc(bitX+(bitH/150*57), bitY+(bitH/150*137), bitH/150*23, bitH/150*55, 0, 361);
+arc(bitX+(bitH/150*141), bitY+(bitH/150*137), bitH/150*23, bitH/150*55, 0, 362);
+};
+
+    var drawHair = function(bitX, bitY, bitH)
+    {
+//hair
+fill(181, 99, 11);
+ellipse(bitX+(bitH/150*67), bitY+(bitH/150*67), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*73), bitY+(bitH/150*61), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*87), bitY+(bitH/150*56), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*100), bitY+(bitH/150*54), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*109), bitY+(bitH/150*56), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*121), bitY+(bitH/150*62), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*131), bitY+(bitH/150*70), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*62), bitY+(bitH/150*80), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*136), bitY+(bitH/150*80), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*62), bitY+(bitH/150*88), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*138), bitY+(bitH/150*89), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*78), bitY+(bitH/150*80), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*91), bitY+(bitH/150*80), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*106), bitY+(bitH/150*80), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*121), bitY+(bitH/150*80), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*95), bitY+(bitH/150*71), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*85), bitY+(bitH/150*72), bitH/150*20, bitH/150*20);
+ellipse(bitX+(bitH/150*109), bitY+(bitH/150*71), bitH/150*20, bitH/150*20);
+};
+
+    var drawBeard = function(bitX, bitY, bitH)
+    {
+//beard
+fill(181, 99, 11); 
+arc(bitX+(bitH/150*99), bitY+(bitH/150*139), bitH/150*58, bitH/150*32, -6, 189);
+quad(bitX+(bitH/150*128), bitY+(bitH/150*138), bitX+(bitH/150*133), bitY+(bitH/150*117), bitX+(bitH/150*121), bitY+(bitH/150*121), bitX+(bitH/150*109), bitY+(bitH/150*153));
+quad(bitX+(bitH/150*90), bitY+(bitH/150*142), bitX+(bitH/150*78), bitY+(bitH/150*121), bitX+(bitH/150*66), bitY+(bitH/150*119), bitX+(bitH/150*70), bitY+(bitH/150*141));
+quad(bitX+(bitH/150*93), bitY+(bitH/150*118), bitX+(bitH/150*93), bitY+(bitH/150*121), bitX+(bitH/150*71), bitY+(bitH/150*127), bitX+(bitH/150*73), bitY+(bitH/150*122));
+rect(bitX+(bitH/150*93), bitY+(bitH/150*118), bitH/150*19, bitH/150*3); 
+quad(bitX+(bitH/150*126), bitY+(bitH/150*121), bitX+(bitH/150*128), bitY+(bitH/150*126), bitX+(bitH/150*112), bitY+(bitH/150*121), bitX+(bitH/150*111), bitY+(bitH/150*118));
+rect(bitX+(bitH/150*95), bitY+(bitH/150*134), bitH/150*10, bitH/150*12);
+};
+
+    var drawEyes = function(bitX, bitY, bitH)
+    {
+//eyes
+fill(255, 224, 189);
+stroke(0, 0, 0);
+arc(bitX+(bitH/150*86), bitY+(bitH/150*99), bitH/150*13, bitH/150*9, 1, 180);
+fill(255, 255, 255);
+ellipse(bitX+(bitH/150*113), bitY+(bitH/150*100), bitH/150*12, bitH/150*8);
+noStroke();
+fill(51, 138, 77);
+ellipse(bitX+(bitH/150*113), bitY+(bitH/150*100), bitH/150*5, bitH/150*5);
+};
+
+    var drawNose = function(bitX, bitY, bitH)
+    {
+//nose
+stroke(0, 0, 0);
+fill(255, 224, 189);
+bezier(bitX+(bitH/150*100), bitY+(bitH/150*100), bitX+(bitH/150*123), bitY+(bitH/150*128), bitX+(bitH/150*84), bitY+(bitH/150*109), bitX+(bitH/150*101), bitY+(bitH/150*115));
+};
+
+    var drawMouth = function(bitX, bitY, bitH)
+    {
+//mouth
+fill(255, 255, 255);
+arc(bitX+(bitH/150*100), bitY+(bitH/150*125), bitH/150*30, bitH/150*13, 1, 180);
+};
+
+var drawShirt = function(bitX, bitY, bitH)
+{
+//shirt
+noStroke();
+fill(0, 0, 0);
+rect(bitX+(bitH/150*63), bitY+(bitH/150*165), bitH/150*79, bitH/150*60);
+fill(255, 255, 255);
+rect(bitX+(bitH/150*75), bitY+(bitH/150*173), bitH/150*3, bitH/150*27);
+rect(bitX+(bitH/150*78), bitY+(bitH/150*173), bitH/150*14, bitH/150*3);
+rect(bitX+(bitH/150*78), bitY+(bitH/150*185), bitH/150*9, bitH/150*3);
+rect(bitX+(bitH/150*78), bitY+(bitH/150*197), bitH/150*14, bitH/150*3);
+rect(bitX+(bitH/150*105), bitY+(bitH/150*173), bitH/150*3, bitH/150*27);
+rect(bitX+(bitH/150*120), bitY+(bitH/150*179), bitH/150*3, bitH/150*15);
+quad(bitX+(bitH/150*122), bitY+(bitH/150*175), bitX+(bitH/150*123), bitY+(bitH/150*180), bitX+(bitH/150*105), bitY+(bitH/150*173), bitX+(bitH/150*105), bitY+(bitH/150*170));
+quad(bitX+(bitH/150*123), bitY+(bitH/150*189), bitX+(bitH/150*123), bitY+(bitH/150*194), bitX+(bitH/150*107), bitY+(bitH/150*200), bitX+(bitH/150*105), bitY+(bitH/150*199));
+};
+
+var drawBitmoji = function(bitX, bitY, bitH)
+{
+    drawFace(bitX, bitY, bitH);
+    drawHair(bitX, bitY, bitH);
+    drawBeard(bitX, bitY, bitH);
+    drawEyes(bitX, bitY, bitH);
+    drawNose(bitX, bitY, bitH);
+    drawMouth(bitX, bitY, bitH);
+    drawShirt(bitX, bitY, bitH);
+};
+ 
+
+//khan button class
+var Button = function(config) {
+    this.x = config.x || 0;
+    this.y = config.y || 0;
+    this.width = config.width || 119;
+    this.height = config.height || 57;
+    this.label = config.label || "Click";
+    this.onClick = config.onClick || function() {};
+    this.color = config.color || color(196, 196, 196);
+    this.textColor = config.textColor || color(0, 0, 0);
+};
+
+Button.prototype.draw = function() {
+    fill(this.color);
+    rect(this.x, this.y, this.width, this.height, 5);
+    fill(this.textColor);
+    textSize(25);
+    textAlign(CENTER, CENTER);
+    text(this.label, this.x+56, this.y+this.height/2);
+};
+
+Button.prototype.isMouseInside = function() {
+    return mouseX > this.x &&
+           mouseX < (this.x + this.width) &&
+           mouseY > this.y &&
+           mouseY < (this.y + this.height);
+};
+
+Button.prototype.handleMouseClick = function() {
+    if (this.isMouseInside()) {
+        this.onClick();
+    }
+};
+//function for the boat that I drew
+var drawBoat = function(boatX, boatY, boatH) {
+fill(0, 0, 0);
+arc(boatX+(boatH/100*100), boatY+(boatH/100*160), boatH/100*100, boatH/100*81, 0, 180);
+fill(150, 145, 145);
+rect(boatX+(boatH/100*71), boatY+(boatH/100*120), boatH/100*20, boatH/100*40);
+fill(199, 76, 76);
+rect(boatX+(boatH/100*109), boatY+(boatH/100*135), boatH/100*13, boatH/100*25);
+fill(161, 204, 237);
+ellipse(boatX+(boatH/100*75), boatY+(boatH/100*176), boatH/100*15, boatH/100*15);
+ellipse(boatX+(boatH/100*125), boatY+(boatH/100*176), boatH/100*15, boatH/100*15);
+fill(255, 251, 0);
+ellipse(boatX+(boatH/100*100), boatY+(boatH/100*176), boatH/100*15, boatH/100*15);
+};
+//tile object class
+var Tile = function(x, y, face) {
+    this.x = x;
+    this.y = y;
+    this.size = 60;
+    this.face = face;
+    this.isFaceUp = false;
+    this.isMatch = false;
+    
+    this.isBoat = false; 
+};
+//draws what is shown on the tiles and when
+Tile.prototype.draw = function() {
+    fill(100, 108, 227);
+    strokeWeight(2);
+    rect(this.x, this.y, this.size, this.size, 10);
+    if (this.isFaceUp) {
+        if(this.isBoat){
+            drawBoat(this.x - 11, this.y - 35, 40);
+        }else{
+            image(this.face, this.x, this.y, this.size, this.size);
+        }
+    } else {
+        image(getImage("avatars/aqualine-seed"), this.x, this.y, this.size, this.size);
+    }
+};
+//checks if mouse clicks a tile
+Tile.prototype.isUnderMouse = function(x, y) {
+    return x >= this.x && x <= this.x + this.size  &&
+        y >= this.y && y <= this.y + this.size;
+};
+
+// Global config
+var NUM_COLS = 6;
+var NUM_ROWS = 4;
+
+// Creates the tiles
+var tiles = [];
+for (var i = 0; i < NUM_COLS; i++) {
+    for (var j = 0; j < NUM_ROWS; j++) {
+        var tileX = i * 67 + 2;
+        var tileY = j * 67 + 65;
+        var tileFace = getImage("space/collisioncircle");
+        tiles.push(new Tile(tileX, tileY, tileFace));
+    }
+}
+//allows for the locations of the boats to be random and not repeated
+var numBoatsWanted = 6; 
+while(numBoatsWanted > 0) {
+    var randomBoatIndex = floor(random(0, NUM_COLS * NUM_ROWS));
+    
+    if(tiles[randomBoatIndex].isBoat === false) {
+        tiles[randomBoatIndex].isBoat = true;
+        numBoatsWanted--;
+    }
+}
+
+
+
+background(255, 255, 255);
+
+var triesLeft = 0;
+var numTries = 0;
+var numMatches = 0;
+var flippedTiles = [];
+var delayStartFC = null;
+var currentScene;
+//game for easy difficulty
+var drawSceneEasy = function() 
+{
+    currentScene = 3;
+    triesLeft = 24;
+draw = function() {
+    background(110, 169, 240);
+    textSize(20);
+    fill(0, 0, 0);
+    
+    text("You have " + triesLeft + " missiles remaining.", 200, 37);
+    if (delayStartFC && (frameCount - delayStartFC) > 30) {
+        for (var i = 0; i < tiles.length; i++) {
+            var tile = tiles[i];
+        }
+        flippedTiles = [];
+        delayStartFC = null;
+        noLoop();
+    }
+    
+    for (var i = 0; i < tiles.length; i++) {
+        tiles[i].draw();
+    }
+    
+    if (numMatches === 6) {
+        fill(0, 0, 0);
+        textSize(20);
+        text("You sunk them all in " + numTries + " tries!", 200, 375);
+    }
+    
+    if (triesLeft === 0) {
+        background(0, 0, 0);
+        fill(255, 0, 0);
+        textSize(62); 
+        text("GAME OVER", 200, 209);
+    }
+};
+};
+//game for medium difficulty
+var drawSceneMedium = function() 
+{
+    currentScene = 4;
+    triesLeft = 20;
+draw = function() {
+    background(110, 169, 240);
+    textSize(20);
+    fill(0, 0, 0);
+    
+    text("You have " + triesLeft + " missiles remaining.", 200, 37);
+    if (delayStartFC && (frameCount - delayStartFC) > 30) {
+        for (var i = 0; i < tiles.length; i++) {
+            var tile = tiles[i];
+        }
+        flippedTiles = [];
+        delayStartFC = null;
+        noLoop();
+    }
+    
+    for (var i = 0; i < tiles.length; i++) {
+        tiles[i].draw();
+    }
+    
+    if (numMatches === 6) {
+        fill(0, 0, 0);
+        textSize(20);
+        text("You sunk them all in " + numTries + " tries!", 200, 375);
+    }
+    
+    if (triesLeft === 0) {
+        background(0, 0, 0);
+        fill(255, 0, 0);
+        textSize(62); 
+        text("GAME OVER", 200, 209);
+    }
+};
+};
+// game for hard difficulty
+var drawSceneHard = function() 
+{
+    currentScene = 5;
+    triesLeft = 16;
+draw = function() {
+    background(110, 169, 240);
+    textSize(20);
+    fill(0, 0, 0);
+    
+    text("You have " + triesLeft + " missiles remaining.", 200, 37);
+    if (delayStartFC && (frameCount - delayStartFC) > 30) {
+        for (var i = 0; i < tiles.length; i++) {
+            var tile = tiles[i];
+        }
+        flippedTiles = [];
+        delayStartFC = null;
+        noLoop();
+    }
+    // prints out the tiles
+    for (var i = 0; i < tiles.length; i++) {
+        tiles[i].draw();
+    }
+    // if six boats are hit, the player wins
+    if (numMatches === 6) {
+        fill(0, 0, 0);
+        textSize(20);
+        text("You sunk them all in " + numTries + " tries!", 200, 375);
+    }
+    //if the player runs out of missiles, the player looses and the game is over
+    if (triesLeft === 0) {
+        background(0, 0, 0);
+        fill(255, 0, 0);
+        textSize(62); 
+        text("GAME OVER", 200, 209);
+    }
+};
+};
+
+// buttons shown in scene two. each of the buttons corrosponds to the game mode
+var easyButton = new Button({
+    x: 134,
+    y: 93,
+    label: "Easy",
+    onClick: function() {
+        drawSceneEasy();
+    }
+});
+
+var mediumButton = new Button({
+    x: 134,
+    y: 156,
+    label: "Medium",
+    onClick: function() {
+        drawSceneMedium();
+    }
+});
+
+var hardButton = new Button({
+    x: 134,
+    y: 219,
+    label: "Hard",
+    onClick: function() {
+        drawSceneHard();
+    }
+});
+// scene to chose the difficulty
+var drawScene2 = function()
+{
+    currentScene = 2;
+    background(110, 169, 240);
+    textSize(40);
+    text("Select Difficulty", 190, 52);
+    easyButton.draw();
+    mediumButton.draw();
+    hardButton.draw();
+};
+
+var startButton = new Button({
+    x: 142,
+    y: 299,
+    label: "Start",
+    onClick: function() {
+        drawScene2();
+        currentScene = 2;
+    }
+});
+
+mouseClicked = function() {
+    if (currentScene === 1)
+    {
+    startButton.handleMouseClick(); //button clicks are handled per scene
+    }
+    if (currentScene === 2)
+    {
+    easyButton.handleMouseClick();
+    mediumButton.handleMouseClick();
+    hardButton.handleMouseClick();
+    }
+    //checks the tile face to see if it is a boat, decreasing the number of tries and increasing the number of tries it took
+    for (var i = 0; i < tiles.length; i++) {
+        var tile = tiles[i];
+        if (tile.isUnderMouse(mouseX, mouseY)) {
+            if (flippedTiles.length < 24 && !tile.isFaceUp) {
+                tile.isFaceUp = true;
+                flippedTiles.push(tile);
+                numTries++;
+                triesLeft--;
+                if(tile.isFaceUp && tile.isBoat) {
+                    numMatches++;
+                }
+                    delayStartFC = frameCount;
+            } 
+            loop();
+        }
+    }
+};
+//splash scene
+var drawScene1 = function()
+{
+    currentScene = 1;
+    background(110, 169, 240);
+    drawBitmoji(7, 242, 81); 
+    drawBitmoji(284, 242, 81);
+    drawBoat(110, -3, 84);
+    fill(0, 0, 0);
+    textSize(51);
+    textAlign(CENTER, CENTER);
+    text("Battleship", 88, -79, 229, 256);
+    textSize(20);
+    text("Try to find all 6 battleships before you run out of missiles!", 74, 164, 249, 100);
+    textAlign(LEFT, CENTER);
+    textSize(14);
+    text("Presented by Eli Dehner", 119, 14);
+    startButton.draw();
+};
+
+drawScene1(); 
+
+noLoop();
